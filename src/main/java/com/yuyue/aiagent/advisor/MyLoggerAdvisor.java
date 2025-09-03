@@ -28,6 +28,7 @@ public class MyLoggerAdvisor implements CallAroundAdvisor, StreamAroundAdvisor {
     }
 
     private void observeAfter(AdvisedResponse advisedResponse) {
+        log.info("AI Response: {}", advisedResponse.response().getResult().getOutput().getText());
     }
 
     public AdvisedResponse aroundCall(AdvisedRequest advisedRequest, CallAroundAdvisorChain chain) {
