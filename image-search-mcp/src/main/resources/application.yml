@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: yu-image-search-mcp-server
+  profiles:
+    active: stdio
+server:
+  port: 8127
+pexels:
+  api:
+    key: ${AIAGENT_PEXELS_API_KEY:} # 优先从环境变量 PEXELS_API_KEY 读取，无则为空（启动报错）

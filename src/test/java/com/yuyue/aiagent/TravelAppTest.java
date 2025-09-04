@@ -30,6 +30,13 @@ class TravelAppTest {
         answer = travelApp.doChat(message, chatId);
         Assertions.assertNotNull(answer);
     }
+    @Test
+    void doChatWithRag() {
+        String chatId = UUID.randomUUID().toString();
+        String message = "亲近自然的旅游地点";
+        String answer =  travelApp.doChatWithRag(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
 
 
     @Test
@@ -52,5 +59,24 @@ class TravelAppTest {
         String answer = travelApp.doChatWithTools(message, chatId);
         Assertions.assertNotNull(answer);
     }
+
+    @Test
+    void doChatWithMcp() {
+        String chatId = UUID.randomUUID().toString();
+        // 测试地图 MCP
+        String message = "我想去成都旅游，请你帮我推荐武侯祠附近的几家火锅店";
+        String answer =  travelApp.doChatWithMcp(message, chatId);
+    }
+
+    @Test
+    void doChatWithMcpPicSearch() {
+        String chatId = UUID.randomUUID().toString();
+        // 测试图片搜索 MCP
+        String message = "Find some pictures about White House.";
+        String answer =  travelApp.doChatWithMcp(message, chatId);
+        Assertions.assertNotNull(answer);
+    }
+
+
 
 }

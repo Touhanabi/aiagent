@@ -13,6 +13,10 @@ spring:
         dimensions: 1536
         distance-type: COSINE_DISTANCE
         max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
   datasource:
     url: jdbc:postgresql://rm-cn-m414f6wmt0003wwo.rwlb.rds.aliyuncs.com/aiagentdb
     username: aiagent
